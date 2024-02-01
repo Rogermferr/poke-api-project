@@ -1,0 +1,156 @@
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  background-color: #212529;
+  color: #dee2e6;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 3rem 0;
+  gap: 1.5rem;
+}
+
+.header__container > img {
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.header__container > img:hover {
+  transform: scale(1.2);
+}
+
+.search__container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search__container > input {
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: #7c8b99;
+  padding: 0.8rem 1rem;
+
+  border: none;
+  border-radius: 0.3rem;
+  background-color: #343a40;
+}
+
+.search__container > button {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+
+  border: none;
+  border-radius: 0.3rem;
+  background-color: #4c6ef5;
+  transition: all 0.5s;
+}
+
+.search__container > button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 4px #dee2e6;
+}
+
+.main__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.main__container > h2 {
+  font-size: 1.5rem;
+}
+
+.list__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#loading {
+  font-size: 1.25rem;
+  position: fixed;
+  top: 60vh;
+
+  animation: slidein;
+  animation-duration: 1s;
+}
+
+#error {
+  text-align: center;
+  font-size: 1.25rem;
+  position: fixed;
+  top: 60vh;
+}
+
+@keyframes slidein {
+  from {
+    font-size: 5rem;
+  }
+}
+
+.list__item {
+  display: flex;
+  align-items: center;
+
+  width: 80vw;
+  background-color: #343a40;
+  border-radius: 0.3rem;
+  padding-right: 1rem;
+
+  transition: all 0.5s;
+}
+
+.list__item:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 0 4px #4c6ef5, 0 0 16px 8px #4c6ef5, 0 0 14px 7px #4c6ef5;
+  cursor: wait;
+}
+
+.list__item > img {
+  width: 80px;
+  height: 80px;
+  margin: 0.5rem;
+
+  object-fit: scale-down;
+}
+
+.list__item > h3 {
+  font-size: 1.25rem;
+}
+
+.list__item > span {
+  font-size: 1rem;
+  margin-left: auto;
+  padding-left: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .header__container {
+    width: 60vw;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  #loading {
+    top: 50vh;
+  }
+
+  #error {
+    top: 50vh;
+  }
+
+  .list__item {
+    width: 60vw;
+  }
+}
